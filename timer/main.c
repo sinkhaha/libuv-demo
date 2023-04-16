@@ -10,8 +10,7 @@ int main() {
     // 初始化 uv_timer_t 结构体
     uv_timer_init(uv_default_loop(), &once);
 
-    // 启动定时器
-    // 超时后执行 once_cb，0 表示只执行一次回调，设置为 n 代表第一次超时后，下次超时时间
+    // 启动定时器，超时后执行 once_cb回调函数，2000为超时时间，0 表示只执行一次回调
     uv_timer_start(&once, once_cb, 2000, 0);
 
     // 执行事件循环
